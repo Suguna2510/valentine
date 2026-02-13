@@ -36,7 +36,7 @@ p {
 }
 
 button {
-    margin-top: 30px;
+    margin: 15px 10px;
     padding: 15px 30px;
     border: none;
     border-radius: 50px;
@@ -76,14 +76,25 @@ button:hover {
 <div class="container">
     <h1>Happy First Valentine's Day, Jai 💙</h1>
     <p>
-        Jai, these past 6 months have been the most amazing days of my life.  
+        Jai, these past 6 months have been the most amazing of my life.  
         From our first date to our upcoming wedding, every moment with you is magical.  
         I can’t wait to spend forever with you ❤️
     </p>
     <button onclick="showLove()">Click for a Surprise 💌</button>
+    <div style="margin-top: 20px;">
+        <button onclick="proposal('yes')">Yes 💕</button>
+        <button onclick="proposal('no')">No 😢</button>
+    </div>
 </div>
 
+<!-- Tamil music -->
+<audio id="bgMusic" autoplay loop>
+  <source src="love_song.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
 <script>
+// Original surprise message
 function showLove() {
     alert("Jai, I love you more than words can express! Can't wait to marry you 💕");
 }
@@ -100,6 +111,25 @@ function createHeart() {
     setTimeout(() => { heart.remove(); }, 6000);
 }
 setInterval(createHeart, 300);
+
+// Yes / No proposal function
+function proposal(answer) {
+    if(answer === 'yes') {
+        alert("Yay! Jai said YES! 💕 I can’t wait to marry you! 🥰");
+    } else {
+        alert("Oh no 😢 It's okay Jai, I still love you!");
+    }
+}
+
+// Optional: Play/pause music
+function toggleMusic() {
+    const music = document.getElementById("bgMusic");
+    if (music.paused) {
+        music.play();
+    } else {
+        music.pause();
+    }
+}
 </script>
 
 </body>
