@@ -8,23 +8,26 @@
 <style>
 body {
     margin: 0;
-    padding: 0;
+    padding: 40px 0;
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #0a1f44, #112d6b, #1e3c72, #5dade2);
     color: white;
     text-align: center;
-
-    min-height: 100vh;     /* change from height */
-    overflow-x: hidden;    /* allow vertical scroll */
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
+/* Content */
 .container {
+    position: relative;
+    z-index: 2;
     animation: fadeIn 2s ease-in-out;
 }
 
 h1 {
     font-size: 3em;
     margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(93, 173, 226, 0.7);
 }
 
 p {
@@ -56,16 +59,23 @@ button:hover {
     to {opacity: 1;}
 }
 
-/* Floating hearts animation */
+/* Floating Hearts */
 .heart {
     position: fixed;
-    color: rgba(255,255,255,0.7);
-    animation: float 6s infinite ease-in;
+    bottom: -20px;
+    pointer-events: none;
+    animation: floatUp linear forwards;
 }
 
-@keyframes float {
-    from {transform: translateY(100vh);}
-    to {transform: translateY(-10vh);}
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh) scale(1.3);
+        opacity: 0;
+    }
 }
 </style>
 </head>
@@ -73,12 +83,12 @@ button:hover {
 <body>
 
 <div class="container">
-    <h1>Happy Valentine's Day, My Man💙</h1>
+    <h1>Happy Valentine's Day, My Man 💙</h1>
     <p>  
         Jai, these past 6 months have been the most amazing days of my life.  
-        From the moment you came into my life, everything started to feel brighter, softer, and more meaningful❤️.
+        From the moment you came into my life, everything started to feel brighter, softer, and more meaningful ❤️.
         You have this beautiful way of making even the simplest days feel special just by being there.
-        From our first date to our upcoming wedding, every moment with you is magical✨.  
+        From our first date to our upcoming wedding, every moment with you is magical ✨.  
         You are the best thing that ever happened to me ❤️.  
     </p>
     
@@ -95,22 +105,23 @@ function showLove() {
 function createHeart() {
     const heart = document.createElement("div");
     heart.classList.add("heart");
-    const hearts = ["❤","💖","💙","💗","💕","🖤"];
+
+    const hearts = ["❤","💖","💙","💗","💕"];
     heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.fontSize = Math.random() * 20 + 15 + "px";
-    heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+    heart.style.animationDuration = Math.random() * 3 + 4 + "s";
+
     document.body.appendChild(heart);
-    setTimeout(() => { heart.remove(); }, 6000);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 7000);
 }
-setInterval(createHeart, 300);
+
+setInterval(createHeart, 500);
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
