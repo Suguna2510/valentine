@@ -10,12 +10,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Blue gradient background */
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: white;
     text-align: center;
-    display: block; /* Changed from flex to block */
-    height: 100vh;
-    overflow: hidden;
+
+    min-height: 100vh;     /* change from height */
+    overflow-x: hidden;    /* allow vertical scroll */
 }
 
 .container {
@@ -75,12 +75,13 @@ button:hover {
 <div class="container">
     <h1>Happy Valentine's Day, Jai 💙</h1>
     <p>  
-        Jai, these past 6 months have been the most amazing of my life.  
+        Jai, these past 6 months have been the most amazing days of my life.  
         From the moment you came into my life, everything started to feel brighter, softer, and more meaningful❤️.
         You have this beautiful way of making even the simplest days feel special just by being there.
         From our first date to our upcoming wedding, every moment with you is magical✨.  
         You are the best thing that ever happened to me ❤️.  
     </p>
+    
     <button onclick="showLove()">Click for Surprise 💌</button>
 </div>
 
@@ -106,5 +107,6 @@ setInterval(createHeart, 300);
 
 </body>
 </html>
+
 
 
