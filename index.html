@@ -10,15 +10,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    /* Blue gradient background with !important to force it */
-    background: linear-gradient(135deg, #1e3c72, #2a5298); /*important*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Blue gradient background */
     color: white;
     text-align: center;
+    display: block; /* Changed from flex to block */
+    height: 100vh;
+    overflow: hidden;
 }
 
 .container {
@@ -31,9 +28,10 @@ h1 {
 }
 
 p {
-    font-size: 1.3em;
-    max-width: 500px;
-    margin: auto;
+    font-size: 1.5em;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
 }
 
 button {
@@ -76,10 +74,11 @@ button:hover {
 
 <div class="container">
     <h1>Happy Valentine's Day, Jai 💙</h1>
-    <p>  Jai, these past 6 months have been the most amazing of my life.  
-         From our first date to our upcoming wedding, every moment with you is magical.  
-         You are the best thing that ever happened to me❤️.  
-         Every moment with you feels magical. 
+    <p>  
+        Jai, these past 6 months have been the most amazing of my life.  
+        From our first date to our upcoming wedding, every moment with you is magical.  
+        You are the best thing that ever happened to me ❤️.  
+        Every moment with you feels magical. 
     </p>
     <button onclick="showLove()">Click for Surprise 💌</button>
 </div>
@@ -87,7 +86,7 @@ button:hover {
 <script>
 // Surprise pop-up
 function showLove() {
-    alert("You are my everything ❤️.I can’t wait to spend forever with you ❤️.I love you forever chellam ❤️");
+    alert("You are my everything ❤️. I can’t wait to spend forever with you ❤️. I love you forever chellam ❤️");
 }
 
 // Floating hearts
@@ -106,6 +105,3 @@ setInterval(createHeart, 300);
 
 </body>
 </html>
-
-
-
